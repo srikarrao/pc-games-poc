@@ -55,8 +55,9 @@ public class DeckGameImpl implements DeckGame {
 	 * method to shuffle cards
 	 */
 	public void shuffleCards() {
+		Random random = new Random();
 		for (int i = 0; i < 52; i++) {
-			int rand = new Random().nextInt(52 - i) + i;
+			int rand = random.nextInt(52 - i) + i;
 			Card temp = cardsDeck.get(i);
 			cardsDeck.set(i, cardsDeck.get(rand));
 			cardsDeck.set(rand, temp);
